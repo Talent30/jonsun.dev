@@ -92,10 +92,10 @@ out
 dist
 
 /.cache
-/build
+
 .env
 .dev.vars
-
+build
 .wrangler
 
 # Gatsby files

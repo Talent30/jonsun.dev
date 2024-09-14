@@ -17,5 +17,7 @@
   "homepage": "https://github.com/Talent30/monorepo-template#readme",
   "description": "",
   "dependencies": {
+    "react-aria-components": "^1.3.3",
+    "tailwind-variants": "^0.2.1"
   }
 }

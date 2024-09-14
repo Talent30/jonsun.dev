@@ -1,9 +1,10 @@
 import { join } from "node:path";
 import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
-import eslintPluginImportX from 'eslint-plugin-import-x'
+import eslintPluginImportX from "eslint-plugin-import-x";
 import tseslint from "typescript-eslint";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
+import tsParser from "@typescript-eslint/parser";
 
 export default tseslint.config(
   // Ignore files not tracked by VCS and any config files
@@ -42,15 +43,26 @@ export default tseslint.config(
           allowList: {
             props: true,
             ref: true,
+            Env: true,
           },
         },
       ],
-      "@typescript-eslint/no-non-null-assertion": "error",
-      "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
     },
   },
   {
     linterOptions: { reportUnusedDisableDirectives: true },
     languageOptions: { parserOptions: { projectService: true } },
+  },
+  {
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
+    rules: {
+      "no-unused-vars": "off",
+      "import-x/no-dynamic-require": "warn",
+      "import-x/no-nodejs-modules": "warn",
+    },
   },
 );
