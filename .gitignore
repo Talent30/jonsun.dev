@@ -91,6 +91,13 @@ out
 .nuxt
 dist
 
+/.cache
+/build
+.env
+.dev.vars
+
+.wrangler
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
