@@ -1,4 +1,6 @@
-export function RootLayout({ children }: { children: React.ReactNode }) {
+import type { ReactNode } from "react";
+
+export function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">

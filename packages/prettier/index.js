@@ -12,7 +12,6 @@ export default {
   // tailwindConfig: fileURLToPath(
   //   new URL("../../tooling/tailwind/base.ts", import.meta.url),
   // ),
-  trailingComma: 'all',
   tailwindFunctions: ["tv"],
   importOrder: [
     "<TYPES>",

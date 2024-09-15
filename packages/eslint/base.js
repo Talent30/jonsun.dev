@@ -37,6 +37,10 @@ export default tseslint.config(
         2,
         { checksVoidReturn: { attributes: false } },
       ],
+      'no-restricted-imports': [
+        'error',
+        { name: 'react', importNames: ['default'], message: 'Use named import instead' },
+      ],
       "unicorn/prevent-abbreviations": [
         "error",
         {
@@ -54,6 +58,7 @@ export default tseslint.config(
     languageOptions: { parserOptions: { projectService: true } },
   },
   {
+    files: ["**/*.js", "**/*.ts", "**/*.tsx"],
     languageOptions: {
       parser: tsParser,
       ecmaVersion: "latest",
