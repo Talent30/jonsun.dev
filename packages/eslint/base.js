@@ -5,23 +5,23 @@ import eslintPluginImportX from "eslint-plugin-import-x";
 import tseslint from "typescript-eslint";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import tsParser from "@typescript-eslint/parser";
+import perfectionist from "eslint-plugin-perfectionist";
+import * as depend from "eslint-plugin-depend";
 
 export default tseslint.config(
   // Ignore files not tracked by VCS and any config files
   includeIgnoreFile(join(import.meta.dirname, "../../.gitignore")),
-  { ignores: ["**/*.config.*"] },
+  { ignores: ["**/*.config.js"] },
   {
     files: ["**/*.js", "**/*.ts", "**/*.tsx"],
-    plugins: {
-      import: eslintPluginImportX,
-    },
     extends: [
       eslint.configs.recommended,
-      ...tseslint.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
       eslintPluginImportX.flatConfigs.recommended,
       eslintPluginImportX.flatConfigs.typescript,
+      perfectionist.configs["recommended-natural"],
+      depend.configs["flat/recommended"],
       eslintPluginUnicorn.configs["flat/recommended"],
     ],
     rules: {
@@ -29,17 +29,17 @@ export default tseslint.config(
         "error",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
-      "@typescript-eslint/consistent-type-imports": [
-        "warn",
-        { prefer: "type-imports", fixStyle: "separate-type-imports" },
-      ],
       "@typescript-eslint/no-misused-promises": [
         2,
         { checksVoidReturn: { attributes: false } },
       ],
-      'no-restricted-imports': [
-        'error',
-        { name: 'react', importNames: ['default'], message: 'Use named import instead' },
+      "no-restricted-imports": [
+        "error",
+        {
+          name: "react",
+          importNames: ["default"],
+          message: "Use named import instead",
+        },
       ],
       "unicorn/prevent-abbreviations": [
         "error",
@@ -63,11 +63,6 @@ export default tseslint.config(
       parser: tsParser,
       ecmaVersion: "latest",
       sourceType: "module",
-    },
-    rules: {
-      "no-unused-vars": "off",
-      "import-x/no-dynamic-require": "warn",
-      "import-x/no-nodejs-modules": "warn",
     },
   },
 );

@@ -1,14 +1,37 @@
 {
   "name": "@acme/ui-components",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --check . --ignore-path ../../.gitignore"
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "description": "",
   "dependencies": {
-    "react-aria-components": "^1.3.3",
-    "tailwind-variants": "^0.2.1"
-  }
+    "react-aria-components": "1.3.3",
+    "tailwind-variants": "0.2.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "8.3.3",
+    "@storybook/addon-interactions": "8.3.3",
+    "@storybook/addon-links": "8.3.3",
+    "@storybook/blocks": "8.3.3",
+    "@storybook/react": "8.3.3",
+    "@storybook/react-vite": "8.3.3",
+    "@storybook/test": "8.3.3",
+    "@tailwindcss/vite": "4.0.0-alpha.24",
+    "@types/react": "18.3.9",
+    "@types/react-dom": "18.3.0",
+    "tailwindcss": "4.0.0-alpha.24",
+    "storybook": "8.3.3",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "eslint": "catalog:",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*"
+  },
+  "prettier": "@acme/prettier-config"
 }

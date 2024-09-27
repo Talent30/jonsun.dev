@@ -1,9 +1,9 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/cloudflare";
 
 export const meta: MetaFunction = () => {
   return [
     { title: "Jon Sun - Web Developer" },
-    { name: "description", content: "Welcome to Remix!" },
+    { content: "Welcome to Remix!", name: "description" },
   ];
 };
 
@@ -17,14 +17,14 @@ export default function Index() {
           </h1>
           <div className="h-[144px] w-[434px]">
             <img
-              src="/logo-light.png"
               alt="Remix"
               className="block w-full dark:hidden"
+              src="/logo-light.png"
             />
             <img
-              src="/logo-dark.png"
               alt="Remix"
               className="hidden w-full dark:block"
+              src="/logo-dark.png"
             />
           </div>
         </header>

@@ -7,12 +7,13 @@
     "**/.server/**/*.tsx",
     "**/.client/**/*.ts",
     "**/.client/**/*.tsx"
- ],
+  ],
+  "exclude": ["node_modules", "build"],
   "compilerOptions": {
     "types": [
       "@remix-run/cloudflare",
       "vite/client",
-      "@cloudflare/workers-types",
+      "@cloudflare/workers-types"
     ],
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   }

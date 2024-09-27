@@ -6,9 +6,9 @@
     "lib": [
       "DOM",
       "DOM.Iterable",
-      "ES2023"
+      "ESNext"
     ],
-    "module": "ESNext",
+    "module": "Preserve",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "allowJs": true,
