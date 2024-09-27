@@ -13,6 +13,8 @@ assets = { directory = "./build/client" }
 [placement]
 mode = "smart"
 
+[observability]
+enabled = true
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Docs:
 # - https://developers.cloudflare.com/pages/functions/bindings/#environment-variables
