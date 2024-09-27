@@ -1,7 +1,10 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "blog"
-compatibility_date = "2024-09-14"
-pages_build_output_dir = "./build/client"
+compatibility_date = "2024-09-27"
+# pages_build_output_dir = "./build/client"
+
+main = "./build/worker/index.js"
+assets = { directory = "./build/client" }
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure
